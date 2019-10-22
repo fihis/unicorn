@@ -1,0 +1,66 @@
+Задача 1
+
+Сработает так же
+
+
+Задача 2
+
+function checkAge(age) {
+  
+  return ((age > 18) ? true : confirm('Родители разрешили?'));
+
+}
+
+function checkAge(age) {
+  
+  return ((age > 18) || confirm('Родители разрешили?'));
+
+}
+
+Задача 3
+
+function min(a,b) {
+  return ((a < b) ? a : b);
+}
+
+
+Задача 4
+
+function pow(x,n) {
+  if ((n % 1 != 0) || (n < 1)){
+    return alert('Степень должна быть натуральным числом');
+  }
+  let result = 1;
+  for (let i = 0; i < n; i++) {
+    result = result * x;
+  }
+  return result;
+}
+
+Задача 5
+
+(question, yes, no) => {
+  if (confirm(question)) yes()
+  else no();
+}
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+)
+
+Задача 6
+
+function makeCounter() {
+  let count = 0;
+  return function() {
+    return count++;
+  };
+}
+let counter = makeCounter();
+let counter2 = makeCounter();
+alert( counter() ); // 0
+alert( counter() ); // 1
+alert( counter2() ); // 0
+alert( counter2() ); // 1
+
