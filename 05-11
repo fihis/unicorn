@@ -1,3 +1,4 @@
+    НАСЛЕДОВАНИЕ
 >>>>> Задача 1 <<<<<
 class Animal {
   constructor(name) {
@@ -51,4 +52,117 @@ class ExtendedClock extends Clock {
     this.render();
     this.timer = setInterval(() => this.render(), this.precision);
   }
+}
+
+>>>>> Задача 3 <<<<<
+class Animal {
+  constructor (name){
+    this.name = name
+  }
+  getName() {
+    return this.name;
+  }
+}
+class Cat extends Animal {
+  constructor (name) {
+    super(name);
+  }
+  meow () {
+    return `Cat ${this.name} is saying meow`
+  }
+}
+
+>>>>> Задача 4 <<<<<
+class User {
+  constructor(name, surname){
+    this.name = name;
+    this.surname = surname;
+  }
+  getFullName(){
+    return `${this.name} ${this.surname}`;
+  }
+}
+class Student extends User{
+  constructor(name,surname, year){
+    super(name,surname);
+    this.year = year;
+  }
+  getCourse(){
+    let date = new Date();    
+    return (date.getFullYear() - this.year);
+  }
+  }
+let me = new Student('Anton', 'Ausiyevich', 2016);
+  console.log(me.getCourse());
+  console.log(me.getFullName());
+  
+      ПРОТОТИПЫ
+>>>>> Задача 1 <<<<<
+let animal = {
+  jumps: null
+};
+let rabbit = {
+  __proto__: animal,
+  jumps: true
+};
+alert( rabbit.jumps ); // true (из rabbit)
+delete rabbit.jumps;
+alert( rabbit.jumps ); // null (из animal)
+delete animal.jumps;
+alert( rabbit.jumps ); // undefined
+
+>>>>> Задача 2 <<<<<
+let head = {
+  glasses: 1
+};
+let table = {
+  __proto__:head,
+  pen: 3
+};
+let bed = {
+  __proto__:table,
+  sheet: 1,
+  pillow: 2
+};
+let pockets = {
+  __proto__:bed,
+  money: 2000
+};
+
+>>>>> Задача 3 <<<<<
+let animal = {
+  eat() {
+    this.full = true;
+  }
+};
+let rabbit = {
+  __proto__: animal
+};
+rabbit.eat();
+
+RABBIT
+
+>>>>> Задача 4 <<<<<
+
+      КОНСТРУКТОРЫ
+???????          >>>>> Задача 1 <<<<<
+let res = {};
+function A() { return res; }
+function B() { return res }
+let a = new A;
+let b = new B;
+alert( a == b );
+
+>>>>> Задача 2 <<<<<
+function Calculator() {
+  this.read = () => {
+    this.first = +prompt('Введите первое значение');
+    this.second = +prompt('Введите второе значение');
+  };
+  this.sum = () => {
+    return (this.first + this.second)
+  };
+  this.mul = () => {
+    return (this.first * this.second)
+  };
 }
