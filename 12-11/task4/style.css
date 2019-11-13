@@ -4,11 +4,14 @@
     width: 500px;
     height: 500px;
     background: green;
-
 }
 #ball {
     position: absolute;
     width: 50px;
     height: 50px;
     transition: all 0.3s ease-out;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bbf151d89f9360c80b5a8e40ce8eb2008acad072
