@@ -1,6 +1,5 @@
 window.onload = function () {
     let mainImage = document.getElementById('main-image');
-    let images = document.getElementsByTagName('img');
     document.getElementById('gallery').addEventListener('click', (e) => {
         if (e.target.tagName === 'IMG') {
             mainImage.src = e.target.src;
