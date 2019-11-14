@@ -1,0 +1,33 @@
+
+img {
+    display: none;   
+    transition: all 0.5s;
+}
+.slider {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.prev-img, .cur-img, .next-img {
+    display: inline-block;
+    position: absolute;
+}
+.prev-img {
+    margin-right: 30px;
+    width: 28%;
+    transform: perspective(1000px) rotateY(-30deg);
+    left: 0px;
+}
+.cur-img {
+    width: 37%;
+}
+.next-img{
+    margin-left: 30px;
+    transform: perspective(1000px) rotateY(30deg);
+    width: 28%;
+    right: 0px;
+}
