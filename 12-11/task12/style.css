@@ -17,3 +17,23 @@ img {
     width: 50%;
 }
 
+=======
+img {
+    width: 10%;
+    margin: 10px;
+}
+#gallery {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+#main-image {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
