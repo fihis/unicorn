@@ -66,7 +66,7 @@ window.onload = function () {
 
         }
     }
-    const testAPI = new API('http://78jqd.mocklab.io');
+    const testAPI = new API('https://78jqd.mocklab.io');
     testAPI.post();
     testAPI.get();
     testAPI.put();
