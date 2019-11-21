@@ -14,7 +14,7 @@ window.onload = function () {
         async post() {
             this.method = 'POST';
             this.uri = '/json';
-            this.description = 'Match a JSON POST on the request body';
+            //this.description = 'Match a JSON POST on the request body';
             this.body = '{  "id": 12345,  "value": "abc-def-ghi" }';
             this.response = await fetch(this.apiBaseUrl + this.uri, {
                 method: this.method,
@@ -27,7 +27,7 @@ window.onload = function () {
         async get() {
             this.method = 'GET';
             this.uri = '/json/1'
-            this.description = 'GET a JSON resource';
+            //this.description = 'GET a JSON resource';
             this.response = await fetch(this.apiBaseUrl + this.uri, {
                 method: this.method,
                 description: this.description
@@ -35,6 +35,8 @@ window.onload = function () {
             this.result = await this.response.json();
             console.log(JSON.stringify(this.result));
         }
+
+        //not working
         async put() {
             this.putHeaders = new Headers();
             this.putHeaders['Content-Type'] = 'application/json';
@@ -57,7 +59,7 @@ window.onload = function () {
             this.response = await fetch(this.apiBaseUrl + this.uri, {
                 method: 'PUT',
                 headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
+                    'Content-Type': 'application/json'
                 }
             });
 
@@ -65,18 +67,48 @@ window.onload = function () {
             console.log(JSON.stringify(this.result));
 
         }
+
+        //not working
+        async search() {
+            this.uri = '/search';
+            this.searchInit = {
+                method: 'GET'
+                
+            }
+            this.searchUrl = new URL(this.apiBaseUrl + this.uri);
+            this.params = {
+                query: 'q'
+            }
+            this.searchUrl.searchParams.append('query', 'q');
+            //Object.keys(this.params).forEach((key, value) => { this.searchUrl.searchParams.append(key, value) });
+            this.searchRequest = new Request(this.searchUrl, this.searchInit);
+            this.response = await fetch(this.searchRequest);
+            this.result = await this.response.json();
+            console.log(JSON.stringify(this.result));
+
+
+            // this.response = await fetch(this.apiBaseUrl + this.uri, {
+            //     method: 'PUT',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // });
+
+        }
     }
     const testAPI = new API('https://78jqd.mocklab.io');
-    testAPI.post();
-    testAPI.get();
-    testAPI.put();
+    //testAPI.post();
+    //testAPI.get();
+    //testAPI.put();
+    testAPI.search();
+
+
+
 }
+
+
 // apiBaseUrl: http://78jqd.mocklab.io
 // endpoints:
-
-// method: GET
-// uri: /json/1
-// description: GET a JSON resource
 
 // method: PUT
 // uri: /json/2
