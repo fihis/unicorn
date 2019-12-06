@@ -2,11 +2,11 @@ const path = require('path');
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = {
-  optimization: {
-    minimizer: [new UglifyJsPlugin()],
-  },
-};
+// module.exports = {
+//   optimization: {
+//     minimizer: [new UglifyJsPlugin()],
+//   },
+// };
 
 let conf = {
     entry: './src/index.js',
@@ -43,7 +43,12 @@ let conf = {
                 ],
             }
         ]
-    }
+    },
+    optimization: {
+        minimizer: [
+          new UglifyJsPlugin()
+        ]
+      }
 };
 
 
