@@ -1,2 +1,8 @@
-# 21-11-2019
-* https://fihis.github.io/unicorn/21-11%20API%20task/
+# 03-12-2019
+* https://github.com/fihis/unicorn/tree/master/03-12-webpack/
+
+run
+```
+npm install
+npm run start
+```
